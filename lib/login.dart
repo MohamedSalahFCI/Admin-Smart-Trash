@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
     // var tokenBody = {
     //   "token": mob_token,
     // };
-    
+
     var tokenBody = {
       "token":
           "cjsKu4AlvTE:APA91bEIwipoU0wTm1eqExnvEGn_Gq1ouEMC0MoDzYzwhV9H_oatG2EnN1fVQdYzFmwRI_RL7f0oev04K6E7MCiXGxsaBlJQ21kONoANksfmTO9W7yiwDCM379bUYCunZ7kugOzMoHW9",
@@ -159,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
             child: new Text(
               "Smart Trashcan",
               style: TextStyle(
-                  color: Colors.greenAccent,
+                  color: Colors.black45,
                   fontSize: 35.0,
                   fontWeight: FontWeight.bold,
                   fontStyle: FontStyle.italic),
@@ -276,11 +276,11 @@ class _LoginPageState extends State<LoginPage> {
                                           builder: (context) => new Forget1()));
                                 },
                                 child: Text(
-                                  "Forgot password",
+                                  "Forget password..?",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.w400,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 )),
                           ),

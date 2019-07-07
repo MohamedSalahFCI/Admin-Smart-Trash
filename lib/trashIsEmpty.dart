@@ -128,7 +128,10 @@ class _TrashEmptyState extends State<TrashEmpty> {
         appBar: AppBar(
           elevation: 0.1,
           backgroundColor: Colors.red,
-          title: new Text("Trashcan Information"),
+          title: new Text(
+            "Trashcan Information",
+            style: TextStyle(letterSpacing: 3.0),
+          ),
         ),
         body: info == null
             ? new Center(child: new CircularProgressIndicator())
@@ -176,93 +179,97 @@ class _TrashEmptyState extends State<TrashEmpty> {
                             SizedBox(
                               height: 30,
                             ),
-                            Column(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "Worker Name :-",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text(fName + " " + lName),
-                                  ],
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "Worker Rate :-",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text(workerRate.toString()),
-                                  ],
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "Worker Phone :-",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text(workerNumber),
-                                  ],
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "worker Email :-",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text(workerEmail),
-                                  ],
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "Trash Color :-",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text(info["color"]),
-                                  ],
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "Trash Number :-",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text(info["number"]),
-                                  ],
-                                ),
-                              ],
+
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Worker Name :-",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
+                                      Text(fName + " " + lName),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Worker Rate :-",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
+                                      Text(workerRate.toString()),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Worker Phone :-",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
+                                      Text(workerNumber),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "worker Email :-",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
+                                      Text(workerEmail),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Trash Color :-",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
+                                      Text(info["color"]),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Trash Number :-",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
+                                      Text(info["number"]),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                             // Text(info["createdAt"]),
                             // Text(info["updatedAt"]),

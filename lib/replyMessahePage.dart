@@ -107,7 +107,10 @@ class _ReplyToWorkerState extends State<ReplyToWorker> {
       onWillPop: loadData2,
       child: Scaffold(
         appBar: AppBar(
-          title: new Text("Replyin Message"),
+          title: new Text(
+            "Replying Message",
+            style: TextStyle(letterSpacing: 3.0),
+          ),
           elevation: 0.1,
           backgroundColor: Colors.red,
         ),

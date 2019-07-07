@@ -123,7 +123,10 @@ class _TrashInformationState extends State<TrashInformation> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.red,
-        title: new Text("Trash Information"),
+        title: new Text(
+          "Trash Information",
+          style: TextStyle(letterSpacing: 3.0),
+        ),
       ),
       body: ListView(
         children: <Widget>[
