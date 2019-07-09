@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'package:toast/toast.dart';
 import 'package:b_smart_trash/home.dart';
+import 'globals.dart' as globals;
 
 class TrashInformation extends StatefulWidget {
   final bool del;
@@ -72,6 +73,8 @@ class _TrashInformationState extends State<TrashInformation> {
       print("yes all things is good fel token and now login phase is Active");
       Toast.show("Trash Deleted", context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+      globals.count = 0;
+      globals.count2 = 0;
       Navigator.pushReplacement(
           context, new MaterialPageRoute(builder: (context) => HomePage()));
     } else {

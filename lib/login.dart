@@ -60,9 +60,13 @@ class _LoginPageState extends State<LoginPage> {
       await saveData();
       print("rg3na mn l shared");
       print(resBody["token"]);
+      Toast.show("Login Successfully", context,
+          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
       await loadToken(resBody["token"]);
-    } else if (resp.statusCode == 401 || resp.statusCode == 400) {
+    } else {
       print("Error to login");
+      Toast.show("Telephone Number and Password don't match", context,
+          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
     }
   }
 

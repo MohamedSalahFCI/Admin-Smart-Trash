@@ -72,7 +72,7 @@ class _AllTrashesState extends State<AllTrashes> {
                               height: 10,
                             ),
                             new Text(
-                              _data[index].id.toString(),
+                              _data[index].number.toString(),
                               style: TextStyle(
                                   color: Colors.black38, fontSize: 17),
                             )
@@ -133,7 +133,7 @@ class _AllTrashesState extends State<AllTrashes> {
                             latitude: _data[index].destination[0],
                             longitude: _data[index].destination[1],
                             id: _data[index].id,
-                            trashNum: _data[index].id,
+                            trashNum: int.parse(_data[index].number),
                           )));
             },
           );

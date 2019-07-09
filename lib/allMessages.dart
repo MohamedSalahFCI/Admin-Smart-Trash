@@ -177,30 +177,41 @@ class _AllMessagesState extends State<AllMessages> {
     Navigator.pop(context, true);
   }
 */
+
+  Future<bool> loadData2() async {
+    globals.count2 = 0;
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    globals.count2 = preferences.getInt(nameKey2);
+    Navigator.pop(context, true);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: new Text(
-          "Messages ",
-          style: TextStyle(letterSpacing: 6.0),
+    return WillPopScope(
+      onWillPop: loadData2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: new Text(
+            "Messages ",
+            style: TextStyle(letterSpacing: 6.0),
+          ),
+          elevation: 0.1,
+          backgroundColor: Colors.red,
         ),
-        elevation: 0.1,
-        backgroundColor: Colors.red,
-      ),
-      body: FutureBuilder<GetAllMessages>(
-        future: getAllMessages(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return LiquidPullToRefresh(
-              color: Colors.red,
-              showChildOpacityTransition: false,
-              child: _listView(snapshot.data.myData),
-              onRefresh: () => getAllMessages(),
-            );
-          }
-          return new Center(child: new CircularProgressIndicator());
-        },
+        body: FutureBuilder<GetAllMessages>(
+          future: getAllMessages(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return LiquidPullToRefresh(
+                color: Colors.red,
+                showChildOpacityTransition: false,
+                child: _listView(snapshot.data.myData),
+                onRefresh: () => getAllMessages(),
+              );
+            }
+            return new Center(child: new CircularProgressIndicator());
+          },
+        ),
       ),
     );
   }

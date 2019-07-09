@@ -6,6 +6,7 @@ import 'package:toast/toast.dart';
 import 'package:b_smart_trash/home.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'globals.dart' as globals;
 
 class AddNewWorker extends StatefulWidget {
   @override
@@ -66,6 +67,8 @@ class _AddNewWorkerState extends State<AddNewWorker> {
           resp.statusCode == 204) {
         Toast.show("Worker Added Successfully", context,
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+        globals.count = 0;
+        globals.count2 = 0;
         Navigator.push(
             context, new MaterialPageRoute(builder: (context) => HomePage()));
       } else {

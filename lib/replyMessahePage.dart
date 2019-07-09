@@ -85,6 +85,8 @@ class _ReplyToWorkerState extends State<ReplyToWorker> {
         resp.statusCode == 200 ||
         resp.statusCode == 204) {
       print("Reply Sent Successfully");
+      globals.count = 0;
+      globals.count2 = 0;
       Navigator.push(
           context, new MaterialPageRoute(builder: (context) => new HomePage()));
       Toast.show("Reply Sent Successfully", context,

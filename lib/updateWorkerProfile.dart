@@ -11,6 +11,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 //import 'package:dio/dio.dart' as dio;
 import 'package:b_smart_trash/home.dart';
+import 'globals.dart' as globals;
 
 class UpdateWorkerdata extends StatefulWidget {
   final String pic;
@@ -102,6 +103,8 @@ class _UpdateWorkerdataState extends State<UpdateWorkerdata> {
         print("yes all things is good fel token and now login phase is Active");
         Toast.show("Worker Data Updated Successfully", context,
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+        globals.count = 0;
+        globals.count2 = 0;
         Navigator.pushReplacement(
             context, new MaterialPageRoute(builder: (context) => HomePage()));
       } else {

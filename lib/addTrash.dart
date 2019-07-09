@@ -6,6 +6,7 @@ import 'dart:async';
 import 'package:toast/toast.dart';
 import 'package:b_smart_trash/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'globals.dart' as globals;
 
 class AddNewTrash extends StatefulWidget {
   @override
@@ -75,6 +76,8 @@ class _AddNewTrashState extends State<AddNewTrash> {
       print("yes all things is good fel token and now login phase is Active");
       Toast.show("Trash Add Successfully", context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+      globals.count = 0;
+      globals.count2 = 0;
       Navigator.pushReplacement(
           context, new MaterialPageRoute(builder: (context) => HomePage()));
     } else {

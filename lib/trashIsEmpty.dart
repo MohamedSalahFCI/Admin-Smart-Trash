@@ -115,8 +115,6 @@ class _TrashEmptyState extends State<TrashEmpty> {
 
   Future<bool> loadData2() async {
     globals.count = 0;
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    globals.count = preferences.getInt("NotificationCounter");
     Navigator.pop(context, true);
   }
 

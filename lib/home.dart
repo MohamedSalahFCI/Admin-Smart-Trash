@@ -245,24 +245,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 leading: Icon(Icons.person, color: Colors.blue),
               ),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (context) => new ContactUs(
-                              firstName: myUsingVar["user"]["firstname"],
-                              secondName: myUsingVar["user"]["lastname"],
-                              phoneNum: myUsingVar["user"]["phone"],
-                              email: myUsingVar["user"]["email"],
-                              dbToken: myUsingVar["token"],
-                            )));
-              },
-              child: ListTile(
-                title: Text('Contact Us'),
-                leading: Icon(Icons.shopping_basket, color: Colors.blue),
-              ),
-            ),
+            // InkWell(
+            //   onTap: () {
+            //     Navigator.push(
+            //         context,
+            //         new MaterialPageRoute(
+            //             builder: (context) => new ContactUs(
+            //                   firstName: myUsingVar["user"]["firstname"],
+            //                   secondName: myUsingVar["user"]["lastname"],
+            //                   phoneNum: myUsingVar["user"]["phone"],
+            //                   email: myUsingVar["user"]["email"],
+            //                   dbToken: myUsingVar["token"],
+            //                 )));
+            //   },
+            //   child: ListTile(
+            //     title: Text('Contact Us'),
+            //     leading: Icon(Icons.shopping_basket, color: Colors.blue),
+            //   ),
+            // ),
 
             InkWell(
               onTap: () {
