@@ -29,6 +29,7 @@ class TrashInformation extends StatefulWidget {
 
 class _TrashInformationState extends State<TrashInformation> {
   String trashcanNumber;
+  int trashINT;
   double lat;
   double long;
   MapView mapView = new MapView();
@@ -63,7 +64,7 @@ class _TrashInformationState extends State<TrashInformation> {
     headers["Authorization"] = "Bearer $dbToken";
     print("befour req");
     var resp = await http.delete(
-        "https://smart--trash.herokuapp.com/api/v1/trash/$trashcanNumber",
+        "https://smart--trash.herokuapp.com/api/v1/trash/$trashINT",
         headers: headers);
     print("after req");
     print(resp.statusCode);
@@ -73,8 +74,6 @@ class _TrashInformationState extends State<TrashInformation> {
       print("yes all things is good fel token and now login phase is Active");
       Toast.show("Trash Deleted", context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
-      globals.count = 0;
-      globals.count2 = 0;
       Navigator.pushReplacement(
           context, new MaterialPageRoute(builder: (context) => HomePage()));
     } else {
@@ -118,6 +117,7 @@ class _TrashInformationState extends State<TrashInformation> {
         height: 400, width: 900, mapType: StaticMapViewType.roadmap);
     trashcanNumber = widget.trashNum.toString();
     setData();
+    trashINT = widget.id;
   }
 
   @override
