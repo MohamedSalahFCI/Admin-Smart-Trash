@@ -6,6 +6,7 @@ import 'package:b_smart_trash/login.dart';
 import 'package:b_smart_trash/home.dart';
 import 'package:b_smart_trash/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final FirebaseMessaging _messaging = FirebaseMessaging();
   String nameKey = "allAdminData";
   String data;
   Future<String> loadData() async {
@@ -46,6 +48,10 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     setData();
+    _messaging.getToken().then((token) {
+      print("yourToken");
+      print(token);
+    });
   }
 
   @override
